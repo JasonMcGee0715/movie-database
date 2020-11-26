@@ -30,20 +30,21 @@ export default function App() {
 
   return (
     <div className="App">
-      <h1>Movie DataBase</h1>
-      <br />
-      <form onSubmit={handleSubmit}>
-        <label id="searchInput">Search DataBase: </label>
-        <input
-          type="text"
-          name="searchInput"
-          id="searchInput"
-          onChange={handleTextChange}
-        ></input>
-        <input type="submit" value="Search" />
-      </form>
-      {/* <button onClick={handleLog}>Log</button> */}
-      <Search movies={movies} />
+      <div className="app-container">
+        <h1>Movie DataBase</h1>
+        <form className="form" onSubmit={handleSubmit}>
+          <label id="searchInput">Search DataBase: </label>
+          <input
+            type="text"
+            name="searchInput"
+            id="searchInput"
+            onChange={handleTextChange}
+          ></input>
+          <input type="submit" value="Search" />
+        </form>
+        {/* <button onClick={handleLog}>Log</button> */}
+        <Search movies={movies} />
+      </div>
     </div>
   );
 }

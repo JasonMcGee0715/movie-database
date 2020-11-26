@@ -1,0 +1,14 @@
+.search-container {
+  margin: auto;
+  width: 850px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.search-Result {
+  width: 300px;
+  padding: 10px;
+  margin: 5%;
+  border: 3px solid grey;
+}
