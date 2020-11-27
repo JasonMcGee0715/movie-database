@@ -16,3 +16,11 @@ input {
 .app-container {
   margin-top: 80px;
 }
+.app-container h1 {
+  font-family: "Big Shoulders Text", cursive;
+  font-size: 40px;
+}
+form {
+  font-family: "Big Shoulders Text", cursive;
+  font-size: 22px;
+}

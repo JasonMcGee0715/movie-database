@@ -37,18 +37,22 @@ export default function App() {
         isVisible={true}
       >
         <div className="app-container">
-          <h1>Movie DataBase</h1>
+          <h1>The Movie DataBase</h1>
           <form className="form" onSubmit={handleSubmit}>
             <label id="searchInput">Search DataBase: </label>
             <input
               type="text"
               name="searchInput"
               id="searchInput"
+              placeholder="Title..."
               onChange={handleTextChange}
             ></input>
-            <input type="submit" value="Search" />
+            <input
+              type="submit"
+              value="Search"
+              style={{ fontFamily: "Big Shoulders Text", letterSpacing: "2px" }}
+            />
           </form>
-          {/* <button onClick={handleLog}>Log</button> */}
           <Search movies={movies} />
         </div>
       </Animated>
