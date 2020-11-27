@@ -10,3 +10,6 @@ span {
   font-size: ;
   color: rgb(51, 51, 51);
 }
+button {
+  border-radius: 5px;
+}

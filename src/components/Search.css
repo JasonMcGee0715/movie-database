@@ -11,7 +11,8 @@
   justify-content: space-around;
   width: 500px;
   padding: 10px;
-  margin: 5%;
+  /* margin: auto; */
+  margin: 20px;
   border: 3px solid grey;
   background: url("./Maxell-GX-E240-Spine.jpg");
   background-size: contain;
@@ -19,7 +20,7 @@
   color: rgb(51, 51, 51);
 }
 .inner-result {
-  width: 345px;
+  width: 340px;
   display: flex;
   justify-content: space-between;
   align-items: center;
