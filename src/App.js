@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./App.css";
 import Search from "./components/Search";
+import { Animated } from "react-animated-css";
 
 export default function App() {
   const [userInput, SetUserInput] = useState("");
@@ -30,21 +31,27 @@ export default function App() {
 
   return (
     <div className="App">
-      <div className="app-container">
-        <h1>Movie DataBase</h1>
-        <form className="form" onSubmit={handleSubmit}>
-          <label id="searchInput">Search DataBase: </label>
-          <input
-            type="text"
-            name="searchInput"
-            id="searchInput"
-            onChange={handleTextChange}
-          ></input>
-          <input type="submit" value="Search" />
-        </form>
-        {/* <button onClick={handleLog}>Log</button> */}
-        <Search movies={movies} />
-      </div>
+      <Animated
+        animationIn="fadeInDownBig"
+        animationOut="fadeOut"
+        isVisible={true}
+      >
+        <div className="app-container">
+          <h1>Movie DataBase</h1>
+          <form className="form" onSubmit={handleSubmit}>
+            <label id="searchInput">Search DataBase: </label>
+            <input
+              type="text"
+              name="searchInput"
+              id="searchInput"
+              onChange={handleTextChange}
+            ></input>
+            <input type="submit" value="Search" />
+          </form>
+          {/* <button onClick={handleLog}>Log</button> */}
+          <Search movies={movies} />
+        </div>
+      </Animated>
     </div>
   );
 }

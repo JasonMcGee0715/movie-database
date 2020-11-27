@@ -1,0 +1,12 @@
+.details-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+}
+span {
+  font-weight: 700;
+  font-size: ;
+  color: rgb(51, 51, 51);
+}

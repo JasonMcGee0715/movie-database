@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "./Cast.css";
 
 export default function Cast({ movie }) {
   const [credits, SetCredits] = useState([]);
@@ -50,7 +51,7 @@ export default function Cast({ movie }) {
   return (
     <div>
       <button onClick={handleCast}>Show Cast</button>
-      <ul>
+      <ul className="ul-list">
         {cast.map((person, idx) => {
           return (
             <li key={idx}>
