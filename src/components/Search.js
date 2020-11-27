@@ -14,8 +14,10 @@ export default function Search({ movies }) {
             isVisible={true}
           >
             <div className="search-Result" key={idx}>
-              <h1 key={idx}>{movie.original_title}</h1>
-              <Details movie={movie} index={idx} />
+              <div className="inner-result">
+                <span key={idx}>{movie.original_title}</span>
+                <Details movie={movie} index={idx} />
+              </div>
             </div>
           </Animated>
         );
