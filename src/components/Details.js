@@ -25,6 +25,8 @@ export default function Details({ movie, idx }) {
   //   const [toggle, SetToggle] = useState(false);
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
+  const [like, Setlike] = useState(null);
+  const [dislike, SetDislike] = useState(null);
 
   const handleOpen = () => {
     setOpen(true);
@@ -32,6 +34,14 @@ export default function Details({ movie, idx }) {
 
   const handleClose = () => {
     setOpen(false);
+  };
+
+  const handleLike = () => {
+    Setlike(like + 1);
+  };
+
+  const handleDislike = () => {
+    SetDislike(dislike + 1);
   };
 
   //   const handleToggle = () => {
@@ -81,6 +91,17 @@ export default function Details({ movie, idx }) {
                 <div>
                   <span>Votes Counted: </span>
                   {movie.vote_count}
+                </div>
+              </div>
+              <br />
+              <div className="likesAndDislikes">
+                <div className="likesContainer">
+                  <button onClick={handleLike}>Like </button>
+                  <span>{like}</span>
+                </div>
+                <div className="dislikesContainer">
+                  <button onClick={handleDislike}>Hate </button>
+                  <span>{dislike}</span>
                 </div>
               </div>
               <div className="cast-info">

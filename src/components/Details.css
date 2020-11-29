@@ -14,3 +14,13 @@ button {
   border-radius: 5px;
   border-style: ridge;
 }
+.likesAndDislikes {
+  display: flex;
+}
+.likesContainer {
+  display: flex;
+  padding-right: 20px;
+}
+.dislikesContainer {
+  display: flex;
+}
