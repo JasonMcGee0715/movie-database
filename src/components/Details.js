@@ -60,6 +60,7 @@ export default function Details({ movie, idx }) {
         open={open}
         onClose={handleClose}
         closeAfterTransition
+        style={{ width: "50%", left: "25%" }}
         BackdropComponent={Backdrop}
         BackdropProps={{
           timeout: 500,
