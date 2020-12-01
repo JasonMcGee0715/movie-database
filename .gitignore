@@ -10,7 +10,7 @@
 
 # production
 /build
-/.netlify
+.netlify
 
 #API_KEYS
 .env
