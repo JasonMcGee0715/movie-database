@@ -33,7 +33,7 @@ export default function Details({ movie, idx }) {
   //
   //
   //// Code to make likes and dislikes persist
-  // Set states on load
+  // Set states on load to persist data
   useEffect(() => {
     const data = localStorage.getItem("like");
     if (data) {
@@ -120,15 +120,15 @@ export default function Details({ movie, idx }) {
               <div className="likesAndDislikes">
                 <div className="likesContainer">
                   <button className="likeButtons" onClick={handleLike}>
-                    Like{" "}
+                    Like
                   </button>
-                  <span>{like}</span>
+                  <span> {like}</span>
                 </div>
                 <div className="dislikesContainer">
                   <button className="likeButtons" onClick={handleDislike}>
-                    Hate{" "}
+                    Hate
                   </button>
-                  <span>{dislike}</span>
+                  <span> {dislike}</span>
                 </div>
               </div>
               <div className="cast-info">
