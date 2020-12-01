@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Details.css";
 import Cast from "./Cast";
 
@@ -22,31 +22,53 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Details({ movie, idx }) {
-  //   const [toggle, SetToggle] = useState(false);
+  //
+  //
+  //// States
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
   const [like, Setlike] = useState(null);
   const [dislike, SetDislike] = useState(null);
 
+  //
+  //
+  //// Code to make likes and dislikes persist
+  // Set states on load
+  useEffect(() => {
+    const data = localStorage.getItem("like");
+    if (data) {
+      Setlike(JSON.parse(data));
+    }
+  }, []);
+  useEffect(() => {
+    const data = localStorage.getItem("dislike");
+    if (data) {
+      SetDislike(JSON.parse(data));
+    }
+  }, []);
+  // Set states to local storage
+  useEffect(() => {
+    localStorage.setItem("like", JSON.stringify(like));
+  });
+  useEffect(() => {
+    localStorage.setItem("dislike", JSON.stringify(dislike));
+  });
+
+  //
+  //
+  //// Handlers for modal and likes/dislikes
   const handleOpen = () => {
     setOpen(true);
   };
-
   const handleClose = () => {
     setOpen(false);
   };
-
   const handleLike = () => {
     Setlike(like + 1);
   };
-
   const handleDislike = () => {
     SetDislike(dislike + 1);
   };
-
-  //   const handleToggle = () => {
-  //     SetToggle(!toggle);
-  //   };
 
   return (
     <div className="details-container">
@@ -97,11 +119,15 @@ export default function Details({ movie, idx }) {
               <br />
               <div className="likesAndDislikes">
                 <div className="likesContainer">
-                  <button onClick={handleLike}>Like </button>
+                  <button className="likeButtons" onClick={handleLike}>
+                    Like{" "}
+                  </button>
                   <span>{like}</span>
                 </div>
                 <div className="dislikesContainer">
-                  <button onClick={handleDislike}>Hate </button>
+                  <button className="likeButtons" onClick={handleDislike}>
+                    Hate{" "}
+                  </button>
                   <span>{dislike}</span>
                 </div>
               </div>
